@@ -18,6 +18,7 @@
 @property (strong) IBOutlet NSTextField *pukeTextField;
 - (IBAction)pukeButton:(NSButton *)sender;
 - (IBAction)goButton:(NSButton *)sender;
+- (IBAction)getButton:(NSButton *)sender;
 - (IBAction)putButton:(NSButton *)sender;
 
 

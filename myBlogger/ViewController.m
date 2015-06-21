@@ -66,6 +66,17 @@
     }
 }
 
+- (IBAction)getButton:(NSButton *)sender {
+    NSString *url = [NSString stringWithFormat:@"http://inside.miraitoarumachi.com/articles/%@.json",
+                     [_articleIDTextField stringValue]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+    _titleTextField.stringValue = [array valueForKeyPath:@"title"];
+    _categoryTextField.stringValue = [array valueForKeyPath:@"category"];
+    _contentTextView.string = [array valueForKeyPath:@"content"];
+}
+
 - (IBAction)putButton:(NSButton *)sender {
     NSLog(@"\nTitle: %@\nCategory: %@\nContent: %@",
           [_titleTextField stringValue],
