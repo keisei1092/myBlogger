@@ -10,6 +10,15 @@
 
 @interface ViewController : NSViewController
 
+@property (strong) IBOutlet NSTextField *titleTextField;
+@property (strong) IBOutlet NSTextField *categoryTextField;
+@property (strong) IBOutlet NSTextField *articleIDTextField;
+
+@property (strong) IBOutlet NSTextView *contentTextView;
+@property (strong) IBOutlet NSTextField *pukeTextField;
+- (IBAction)pukeButton:(NSButton *)sender;
+- (IBAction)goButton:(NSButton *)sender;
+- (IBAction)putButton:(NSButton *)sender;
+
 
 @end
-
